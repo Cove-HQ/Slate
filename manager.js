@@ -36,4 +36,16 @@ console.log(data)
 }
 
 
-module.exports = {add,process};
+
+async function get(){
+    try{
+
+const contents = fs.readFileSync(awaiting);
+let data = JSON.parse(contents);
+return data
+    } catch (error) {
+        console.error('Error getting processing list:', error);
+    }
+}
+
+module.exports = {add,process,get};
