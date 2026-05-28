@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Slate is running (on ${port} of caffine!!)`);
+  console.log(`Slate is running (on ${port})`);
 });
 
 
@@ -16,3 +16,4 @@ app.use(express.json());
 app.use("/actions/kick", require('./paths/kick.js'));
 app.use("/actions/warn", require('./paths/warn.js'));
 app.use("/actions/ban", require('./paths/ban.js'));
+app.use("/actions/process", require('./paths/process.js'));

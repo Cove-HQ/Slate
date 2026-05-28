@@ -1,14 +1,3 @@
 {
-  "awaiting": [
-    {
-      "username": "123",
-      "reason": "123",
-      "timestamp": "123"
-    },
-    {
-      "username": "1234",
-      "reason": "hi",
-      "timestamp": 1779946642459
-    }
-  ]
+  "awaiting": []
 }
