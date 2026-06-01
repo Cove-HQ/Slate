@@ -5,7 +5,7 @@ const awaiting = path.join(__dirname, 'awaiting', 'awaiting.json');
 async function add(action,user,reason){
     try{
 
-        console.log("Adding to awaiting", {action, user, reason,duration});
+        console.log("Adding to awaiting", {action, user, reason});
 
 const contents = fs.readFileSync(awaiting);
 let data = JSON.parse(contents);
