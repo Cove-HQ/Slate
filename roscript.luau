@@ -1,6 +1,10 @@
+-- regular script
+
 local https = game:GetService("HttpService")
 local link = "https://slate-wuvl.onrender.com/"
 local actionModule = require(script.actions)
+local plrs = game:GetService("Players")
+
 local function getAwaiting()
 	local success, response = pcall(function()
 		return https:GetAsync(link.."processing/get")
@@ -20,7 +24,9 @@ while task.wait(10) do
 	if (#getAwaiting().awaiting>=1) then
 		local awaiting = getAwaiting().awaiting
 		for i,v in pairs(awaiting) do
+			if(game.Players:FindFirstChild(v.username)) then
 			actionModule[v.action](v.username,v.reason,v.duration)
+			end
 			local payload = {
 				action = v.action,
 				username = v.username

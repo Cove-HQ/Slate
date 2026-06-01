@@ -1,9 +1,13 @@
--- this should be a cild of roscript.luau
+-- this should be a cild of roscript.luau | this is a module script
 
 local actionModule = {}
 local plrs = game:GetService("Players")
+local https = game:GetService("HttpService")
+local link = "https://slate-wuvl.onrender.com/"
+
 function actionModule.kick(user,reason)
 	game.Players[user]:Kick(reason)
+	
 end
 function actionModule.ban(user,reason,duration)
 	
@@ -21,8 +25,8 @@ function actionModule.ban(user,reason,duration)
 	local s,r = pcall(function()
 		return plrs:BanAsync(banOps)
 	end)
-	
-	if s  then
+
+if s  then
 		return "Slate: Player banned."
 	else 
 		warn("Slate: Error banning player")
@@ -33,6 +37,8 @@ end
 function actionModule.warn(user,reason)
 
 	print("Warned "..user.." for ".. reason)
+	
+	
 	 
 end
 return actionModule
