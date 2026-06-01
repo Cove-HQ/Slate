@@ -3,6 +3,7 @@ const router = express.Router();
 const { add } = require('../manager.js');
 
 router.post('/', async (req, res) => {
+  console.log("Warn called: ", req.body);
   let {username, reason} = req.body;
 
   await add('warn', username, reason);

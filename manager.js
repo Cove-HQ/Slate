@@ -5,6 +5,8 @@ const awaiting = path.join(__dirname, 'awaiting', 'awaiting.json');
 async function add(action,user,reason){
     try{
 
+        console.log("Adding to awaiting", {action, user, reason});
+
 const contents = fs.readFileSync(awaiting);
 let data = JSON.parse(contents);
 data.awaiting.push({
@@ -14,6 +16,7 @@ data.awaiting.push({
     timestamp: Date.now()
 });
 fs.writeFileSync(awaiting, JSON.stringify(data, null, 2));
+        console.log("Added to awaiting", {action, user, reason});
 
 console.log(data)
 
