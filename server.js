@@ -16,7 +16,7 @@ if(key !== process.env.key) return res.status(401).json({message: "Slate: You ar
 next();
 }
 
-app.post("/*", verifyReq);
+app.post("(.*)", verifyReq);
 
 app.use("/actions/kick", require('./paths/kick.js'));
 app.use("/actions/warn", require('./paths/warn.js'));
