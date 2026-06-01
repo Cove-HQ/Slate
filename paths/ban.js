@@ -5,7 +5,7 @@ const { add } = require('../manager.js');
  router.post('/', async (req, res) => {
   let {username, reason} = req.body;
 
-  await add('ban', username, reason);
+  await add('ban', username, reason, duration);
 
   res.status(200).json({ message: 'User added to queue. Awaiting ban.' });
 });
