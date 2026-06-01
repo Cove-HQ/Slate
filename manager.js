@@ -1,5 +1,6 @@
 const fs = require('fs');
-const awaiting = './awaiting/awaiting.json';
+const path = require('path');
+const awaiting = path.join(__dirname, 'awaiting', 'awaiting.json');
 
 async function add(action,user,reason){
     try{
