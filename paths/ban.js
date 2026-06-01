@@ -3,7 +3,7 @@ const router = express.Router();
 const { add } = require('../manager.js');
 
  router.post('/', async (req, res) => {
-  let {username, reason} = req.body;
+  let {username, reason,duration} = req.body;
 
   await add('ban', username, reason, duration);
 
