@@ -45,7 +45,7 @@ async function get(){
     try{
 console.log("Called get processing list");
 const contents = fs.readFileSync(awaiting);
-let data = JSON.parse(contents);Called
+let data = JSON.parse(contents);
 console.log("Processing list:", data);
 
 return data
